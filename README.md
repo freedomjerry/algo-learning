@@ -1,6 +1,6 @@
 # algo-learning
 
-this repository is  about my algorithm learning record & leetcode record is [here](/leetcode.md)
+this repository is  about my algorithm learning record & leetcode record is [here](/leetcode.md) &#x26FD;
 
 # License
 
