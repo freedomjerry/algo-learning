@@ -1,5 +1,7 @@
 # algo-learning
 
+this repository is  about my algorithm learning record & leetcode record is [here](/leetcode.md)
+
 # License
 
       Copyright 2022 freedomjerry
