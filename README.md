@@ -1,4 +1,4 @@
-# -algo-learnning
+# algo-learning
 
 # License
 
