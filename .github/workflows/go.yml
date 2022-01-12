@@ -1,4 +1,4 @@
-name: Go
+name: update_LeetCodemd
 
 on:
   push:
@@ -18,8 +18,15 @@ jobs:
       with:
         go-version: 1.17
 
-    - name: Build
-      run: go build -v ./...
+    - name: Run
+      run: |
+        cd ${GITHUB_WORKSPACE}/LeetCode
+        go run catagenerator.go
 
-    - name: Test
-      run: go test -v ./...
+    - name: 🚀 Deploy
+      run: |
+        git config user.name "${GITHUB_ACTOR}"
+        git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+        git add.
+        git commit -am "Updata dynamic LeetCode.md :boom: "
+        git push --all -f https://${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git
