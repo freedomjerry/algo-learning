@@ -16,7 +16,7 @@ type CodeCate struct {
 
 }*/
 var TypeMap = map[string]int{"cpp":0, "c": 1, "go": 2, "py": 3, "java":4}
-
+var suffixMap = map[int]string{0: "cpp", 1: "c", 2: "go", 3: "py", 4: "java"}
 func (codecate *CodeCate) JudgeType(FileName string) int {
 	varity := strings.Split(FileName, ".")[1]
 	if Type, ok := TypeMap[varity]; ok == true {
@@ -39,7 +39,7 @@ func (codecate *CodeCate) WriteToMD()  {
 		FILE.WriteString("| <b>"+key+"</b> |")
 		for i := 0; i < 5; i++ {
 			if value[i] == 1 {
-				FILE.WriteString("√ |")
+				FILE.WriteString("[√](./" + key + "/"+ key + "." + suffixMap[i] + ") |")
 			}else{
 				FILE.WriteString(" |")
 			}
@@ -55,6 +55,9 @@ func (codecate *CodeCate)WalkFunc(Path string, info os.FileInfo, err error) erro
 			//fmt.Println(info.Name())
 		}
 	} else {
+		if info.Name() == "catagenerator.go" {
+			return nil
+		}
 		variety := codecate.JudgeType(info.Name())
 		if variety == -1{
 			//fmt.Println(info.Name())
