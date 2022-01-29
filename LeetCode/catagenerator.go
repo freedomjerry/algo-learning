@@ -17,46 +17,38 @@ type CodeCate struct {
 	GetDirsInfo()
 
 }*/
-var TypeMap = []string{"txt","cpp", "c", "go", "py", "java"}
+var suffixMap = []string{"txt","cpp", "c", "go", "py", "java"}
 
 //var suffixMap = map[int]string{0: "cpp", 1: "c", 2: "go", 3: "py", 4: "java"}
 /*func (codecate *CodeCate) JudgeType(FileName string) int {
 	varity := strings.Split(FileName, ".")[1]
-	if Type, ok := TypeMap[varity]; ok == true {
+	if Type, ok := suffixMap[varity]; ok == true {
 		return Type
 	}else{
 		return -1
 	}
 }*/
 func (codecate *CodeCate) WriteToMD() {
-	//fmt.Println("here is create func")
-	//fmt.Println(codecate.CurrentDir)
 	FILE, err := os.Create("LeetCode.md")
+	defer FILE.Close()
 	if err != nil {
 		fmt.Println("err = ", err)
 	}
 	FILE.WriteString("## LeetCode Part\n\n")
 	FILE.WriteString("### This part is my solution & code for LeetCode\n")
 	FILE.WriteString("|<div style='width:100px'> Subject </div>|")
-	for _, v := range TypeMap{
+	for _, v := range suffixMap{
 		if v == "py" {v = "python"}
 		if v == "txt" {v = "tag"}
 		FILE.WriteString("<div style='width:50px'>"+ v +"</div>|")
 	}
 	FILE.WriteString("\n|")
-	for i:=0; i <= len(TypeMap); i++ {
+	for i:=0; i <= len(suffixMap); i++ {
 		FILE.WriteString(" :----: |")
 	}
 	for key, value := range codecate.CodeVersion {
 		FILE.WriteString("\n| <b>" + key + "</b> |")
-		/*for subtype, done := range *value {
-			if done == "√" {
-				FILE.WriteString("[√](./" + key + "/" + key + "." + subtype + ") |")
-			} else {
-				FILE.WriteString(" |")
-			}
-		}*/
-		for _,variety := range TypeMap{
+		for _,variety := range suffixMap{
 			if done, ok := (*value)[variety]; ok == true{
 				if done == "√" {
 					FILE.WriteString("[√](./" + key + "/" + key + "." + variety + ") |")
@@ -75,7 +67,6 @@ func (codecate *CodeCate) WalkFunc(Path string, info os.FileInfo, err error) err
 			codecate.CodeVersion[info.Name()] = &map[string]string{"cpp": " ", "c": " ",
 				"go": " ", "py": " ", "java": " "}
 			codecate.CurrentDir = info.Name()
-			//fmt.Println(info.Name())
 		}
 	} else {
 		if info.Name() == "catagenerator.go" {
@@ -89,7 +80,6 @@ func (codecate *CodeCate) WalkFunc(Path string, info os.FileInfo, err error) err
 			if _, ok := (*codecate.CodeVersion[cur])[variety]; ok == true {
 				(*codecate.CodeVersion[cur])[variety] = "√"
 			} else {
-				//fmt.Println(variety)
 			}
 		}
 	}
@@ -100,8 +90,5 @@ func main() {
 	root := path.Base(strings.Replace(pwd, "\\", "/", -1))
 	codecate := CodeCate{CodeVersion: map[string]*map[string]string{}, CurrentDir: root}
 	filepath.Walk(pwd, codecate.WalkFunc)
-	for key , v := range codecate.CodeVersion{
-		fmt.Println(key, *v)
-	}
 	codecate.WriteToMD()
 }
