@@ -43,7 +43,8 @@ func (codecate *CodeCate) WriteToMD() {
 		FILE.WriteString("<div style='width:50px'>"+ v +"</div>|")
 	}
 	FILE.WriteString("\n|")
-	for i:=0; i <= len(suffixMap); i++ {
+	FILE.WriteString(" :---- |") // subject name is align left
+	for i:=0; i < len(suffixMap); i++ {
 		FILE.WriteString(" :----: |")
 	}
 	for key, value := range codecate.CodeVersion {
