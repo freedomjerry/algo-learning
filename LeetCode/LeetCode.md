@@ -4,4 +4,4 @@
 |<div style='width:100px'> Subject </div>|<div style='width:50px'>tag</div>|<div style='width:50px'>cpp</div>|<div style='width:50px'>c</div>|<div style='width:50px'>go</div>|<div style='width:50px'>python</div>|<div style='width:50px'>java</div>|
 | :---- | :----: | :----: | :----: | :----: | :----: | :----: |
 | <b>1.两数之和</b> | |[√](./1.两数之和/1.两数之和.cpp) | |[√](./1.两数之和/1.两数之和.go) |[√](./1.两数之和/1.两数之和.py) | |
-| <b>4.两个正序数组的中位数</b> | |[√](./4.两个正序数组的中位数/4.两个正序数组的中位数.cpp) | | | | |
+| <b>4.两个正序数组的中位数</b> | |[√](./4.两个正序数组的中位数/4.两个正序数组的中位数.cpp) | |[√](./4.两个正序数组的中位数/4.两个正序数组的中位数.go) | | |
