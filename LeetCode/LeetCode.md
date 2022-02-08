@@ -3,6 +3,7 @@
 ### This part is my solution & code for LeetCode
 |<div style='width:100px'> Subject </div>|<div style='width:50px'>tag</div>|<div style='width:50px'>cpp</div>|<div style='width:50px'>c</div>|<div style='width:50px'>go</div>|<div style='width:50px'>python</div>|<div style='width:50px'>java</div>|
 | :---- | :----: | :----: | :----: | :----: | :----: | :----: |
+| <b>26.删除有序数组中的重复项</b> | | | |[√](./26.删除有序数组中的重复项/26.删除有序数组中的重复项.go) | | |
 | <b>4.两个正序数组的中位数</b> | |[√](./4.两个正序数组的中位数/4.两个正序数组的中位数.cpp) | |[√](./4.两个正序数组的中位数/4.两个正序数组的中位数.go) | | |
 | <b>1.两数之和</b> | |[√](./1.两数之和/1.两数之和.cpp) | |[√](./1.两数之和/1.两数之和.go) |[√](./1.两数之和/1.两数之和.py) | |
 | <b>11.盛水最多的容器</b> | |[√](./11.盛水最多的容器/11.盛水最多的容器.cpp) | |[√](./11.盛水最多的容器/11.盛水最多的容器.go) | | |
