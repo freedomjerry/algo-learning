@@ -62,6 +62,7 @@ func (codecate *CodeCate) WriteToMD() {
 		}
 	}
 }
+
 func (codecate *CodeCate) WalkFunc(Path string, info os.FileInfo, err error) error {
 	if info.IsDir() {
 		if info.Name() != codecate.CurrentDir {

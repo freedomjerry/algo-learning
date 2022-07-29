@@ -1,19 +1,6 @@
-# algo-learning
+## MKMaS-Graduated
 
-This repository is  about my algorithm learning record & leetcode record is [here](/LeetCode/LeetCode.md) &#x26FD;
-
-# License
-
-      Copyright 2022 freedomjerry
-
-      Licensed under the Apache License, Version 2.0 (the "License");
-      you may not use this file except in compliance with the License.
-      You may obtain a copy of the License at
-
-          http://www.apache.org/licenses/LICENSE-2.0
-
-      Unless required by applicable law or agreed to in writing, software
-      distributed under the License is distributed on an "AS IS" BASIS,
-      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-      See the License for the specific language governing permissions and
-      limitations under the License.
+### 桂林电子科技大学 林煜明、李优老师毕业生 学术留存
+|<div style='width:50px'> 毕业年份 </div>|<div style='width:50px'> 姓名 </div>|<div style='width:50px'> 研究方向 </div>|
+| :---- |
+| <b>xzj</b> |<b>hahah</b> |<b>111</b> |

@@ -27,13 +27,45 @@
 链接：https://leetcode-cn.com/problems/two-sum
 */
 
-func twoSum(nums []int, target int) []int {
-	var HashTable map[int]int = map[int]int{}
-	for i := 0; i <len(nums); i++{
-		if value, ok := HashTable[target - nums[i]]; ok == true {
-			return []int{value, i}
-		}
-		HashTable[nums[i]] = i
+//func twoSum(nums []int, target int) []int {
+//	var HashTable map[int]int = map[int]int{}
+//	for i := 0; i <len(nums); i++{
+//		if value, ok := HashTable[target - nums[i]]; ok == true {
+//			return []int{value, i}
+//		}
+//		HashTable[nums[i]] = i
+//	}
+//	return []int{}
+//}
+
+
+package main
+
+import "fmt"
+
+func TwoNumSum (nums []int, target int)(ans []int) {
+var m map[int]int = map[int]int{}
+for i := 0; i < len(nums); i++ {
+if value, ok := m[nums[i]]; ok == true {
+return []int{value, i}
+
+}
+m[target - nums[i]] = i
+}
+return []int{}
+}
+
+func main()  {
+	var target int
+	var lenth int
+	fmt.Scan(&lenth)
+	var nums []int = make([]int, lenth)
+	fmt.Println(nums)
+	for i:= 0; i < lenth; i++ {
+	fmt.Println(i)
+	fmt.Scanf("%d", &nums[i])
 	}
-	return []int{}
+	fmt.Scan(&target)
+	ans := TwoNumSum(nums, target)
+	fmt.Println(ans)
 }
