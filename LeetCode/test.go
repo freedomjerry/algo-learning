@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func isMatch(s string, p string) bool {
 	l1 := len(s)
 	l2 := len(p)
@@ -36,9 +34,9 @@ func isMatch(s string, p string) bool {
 	return dp[l1][l2]
 }
 
-func main()  {
-	var s string
-	var p string
-	fmt.Scan(&s, &p)
-	fmt.Println(isMatch(s, p))
-}
+//func main()  {
+//	var s string
+//	var p string
+//	fmt.Scan(&s, &p)
+//	fmt.Println(isMatch(s, p))
+//}
